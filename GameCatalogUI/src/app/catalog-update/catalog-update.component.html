@@ -1,1 +1,56 @@
-<p>catalog-update works!</p>
+<form>
+  <h1 id="tableLabel">Games Catalog Update</h1>
+
+  <br>
+  <p *ngIf="!resultCatalogData"><em>Loading...</em></p>
+
+  <div class="form-group" *ngIf="resultCatalogData">
+    <input type="hidden" name="catalogId" [value]="resultCatalogData.catalogId"/>
+
+    <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="resultCatalogData">
+      <tbody>
+        <tr>
+          <td><label>Title</label></td>
+          <td><input type="text" class="from-control form-control-sm" placeholder="Game Title" 
+            [(ngModel)]="resultCatalogData.title" name="gameTitle"></td>
+        </tr>
+
+        <tr>
+          <td><label>Genre</label></td>
+          <td><input type="text" class="from-control form-control-sm" placeholder="Genre" 
+            [(ngModel)]="resultCatalogData.genereTitle" name="genreName" ></td>
+        </tr>
+
+        <tr>
+          <td><label>Produced by</label></td>
+          <td><input type="text" class="from-control form-control-sm" placeholder="Company Name" 
+            [(ngModel)]="resultCatalogData.companyName" name="companyName" ></td>
+        </tr>
+
+        <tr>
+          <td><label>Release Date</label></td>
+            <td><input type="date" class="from-control form-control-sm" placeholder="yyyy-MM-dd" 
+              name = "releaseDate"
+              [ngModel]="resultCatalogData.releaseDate | date:'yyyy-MM-dd'"
+              (ngModelChange) = 'resultCatalogData.releaseDate = $event'/>
+            </td>
+        </tr>
+
+        <tr>
+          <td><label>Rate</label></td>
+            <td><input type="number" class="from-control form-control-sm" placeholder="1-5" 
+              [(ngModel)]="resultCatalogData.rate" name="rate"  min="1" max="5" onkeydown="return false"/>
+            </td>
+        </tr>
+
+        <tr>
+          <td><label>Price</label></td>
+            <td><input type="number" class="from-control form-control-sm" placeholder=".01-99.99" 
+              [(ngModel)]="resultCatalogData.price" name="price"  min="0" step="10"/>
+            </td>
+        </tr>
+
+      </tbody>
+    </table>
+</div>
+</form>

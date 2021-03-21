@@ -15,6 +15,10 @@ export class CatalogServices
   getCatalogs() : Observable<ICatalog> {
     return this._http.get<ICatalog>(environment.apiBaseURL + "Catalogs")
   }
+
+  getCatalogById(cataloId: string) : Observable<ICatalog> {
+    return this._http.get<ICatalog>(environment.apiBaseURL + "Catalog/" + cataloId)
+  }
 }
 
   

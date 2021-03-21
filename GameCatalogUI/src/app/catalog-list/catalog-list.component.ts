@@ -14,18 +14,18 @@ export class CatalogListComponent implements OnInit {
 
   ngOnInit(): void 
   {
-      this._catalogService.getCatalogs()
-      .subscribe(
-        result => 
+    this._catalogService.getCatalogs()
+    .subscribe(
+      result => 
+      {
+        if (result.isFailure)
         {
-          if (result.isFailure)
-          {
-            console.error("Error in fatching catalog data from server");
-            return;
-          }
-          this.resultData = result.data
-        }, error => console.error(error)
-      )
+          console.error("Error in fatching catalog data from server");
+          return;
+        }
+        this.resultData = result.data
+      }, error => console.error(error)
+    )
   }
 }
 
