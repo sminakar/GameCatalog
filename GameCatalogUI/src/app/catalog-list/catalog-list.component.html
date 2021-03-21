@@ -1,0 +1,30 @@
+<h1 id="tableLabel">Games Catalog</h1>
+
+<p *ngIf="!resultData"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="resultData">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Genre</th>
+      <th>Company</th>
+      <th>Price</th>
+      <th>Rate</th>
+      <th>Release Date</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- <tr *ngFor="let catalog of catalogs.data;trackBy:trackByClusterID"> -->
+    <tr *ngFor="let catalog of resultData">
+
+      <td>{{ catalog.title }}</td>
+      <td>{{ catalog.genereTitle }}</td>
+      <td>{{ catalog.companyName }}</td>
+      <td>{{ catalog.price | currency:'CAD':'symbol':'2.2-2' }}</td>
+      <td> {{ catalog.rate }}</td>
+      <td> {{ catalog.releaseDate | date:'mediumDate'}}</td>
+      <td><button [routerLink] ="['/update-catalog', catalog.id]" class="btn btn-primary">Edit</button></td>
+    </tr>
+  </tbody>
+
