@@ -1,5 +1,4 @@
 ﻿using Commons.Results;
-using DataAccessLibrary.Models.Entities;
 using DataAccessLibrary.Models.ViewModels;
 using System;
 using System.Collections.Generic;
