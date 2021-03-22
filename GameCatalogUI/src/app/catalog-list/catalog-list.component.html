@@ -15,13 +15,11 @@
     </tr>
   </thead>
   <tbody>
-    <!-- <tr *ngFor="let catalog of catalogs.data;trackBy:trackByClusterID"> -->
-    <tr *ngFor="let catalog of resultData">
-
+    <tr *ngFor="let catalog of resultData;trackBy:trackByClusterID">
       <td>{{ catalog.title }}</td>
       <td>{{ catalog.genereTitle }}</td>
       <td>{{ catalog.companyName }}</td>
-      <td>{{ catalog.price | currency:'CAD':'symbol':'2.2-2' }}</td>
+      <td>{{ catalog.price | currency:'CAD':'symbol':'1.2-2' }}</td>
       <td> {{ catalog.rate }}</td>
       <td> {{ catalog.releaseDate | date:'mediumDate'}}</td>
       <td><button [routerLink] ="['/update-catalog', catalog.id]" class="btn btn-primary">Edit</button></td>

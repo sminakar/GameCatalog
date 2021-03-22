@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
+import { AboutComponent} from './about/about.component';
 import { CatalogListComponent } from './catalog-list/catalog-list.component';
 import { CatalogServices } from './shared/catalog-services.service';
 import { CatalogUpdateComponent } from './catalog-update/catalog-update.component';
@@ -15,6 +16,7 @@ import { CatalogUpdateComponent } from './catalog-update/catalog-update.componen
     AppComponent,
     NavMenuComponent,
     HomeComponent,
+    AboutComponent,
     CatalogListComponent,
     CatalogUpdateComponent
   ],
@@ -25,10 +27,9 @@ import { CatalogUpdateComponent } from './catalog-update/catalog-update.componen
     RouterModule.forRoot([
       { path: 'show-catalog', component: CatalogListComponent },
       { path: 'update-catalog/:id', component: CatalogUpdateComponent},
+      { path: 'about', component: AboutComponent, pathMatch: 'full' },
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: '**', component: HomeComponent, pathMatch: 'full' }
-      // { path: 'counter', component: CounterComponent },
-      // { path: 'fetch-data', component: FetchDataComponent },
     ])
   ],
   providers: [CatalogServices],

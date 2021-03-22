@@ -29,8 +29,6 @@ export class CatalogServices
   }
 
   updateCatalog(formData: ICatalog) : Observable<any> {
-    console.log(formData);
-    
     return this._http.put(environment.apiBaseURL + "UpdateCatalog", formData)
   }
 }

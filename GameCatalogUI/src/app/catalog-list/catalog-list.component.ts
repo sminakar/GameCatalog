@@ -27,5 +27,9 @@ export class CatalogListComponent implements OnInit {
       }, error => console.error(error)
     )
   }
+
+  trackByClusterID(index: number, resultData: any): number {
+    return resultData.clusterID;
+  }
 }
 
