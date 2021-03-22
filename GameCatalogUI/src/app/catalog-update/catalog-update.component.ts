@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { CatalogServices } from 'src/app/shared/catalog-services.service';
 import { IGenre } from 'src/app/shared/IGenre.model';
 import { IDeveloper } from 'src/app/shared/IDeveloper.model';
+import { ICatalog } from '../shared/Icatalog.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-catalog-update',
@@ -10,6 +12,7 @@ import { IDeveloper } from 'src/app/shared/IDeveloper.model';
   styles: [
   ]
 })
+
 export class CatalogUpdateComponent implements OnInit {
 
   public resultCatalogData: any;
@@ -17,7 +20,8 @@ export class CatalogUpdateComponent implements OnInit {
   public devloperData: IDeveloper[];
   
   constructor(private _catalogService: CatalogServices,
-    private _activatedRoute: ActivatedRoute) { }
+    private _activatedRoute: ActivatedRoute,
+    private _router: Router) { }
 
   ngOnInit(): void {
     let catalogId: string = this._activatedRoute.snapshot.params['id'];
@@ -64,5 +68,12 @@ export class CatalogUpdateComponent implements OnInit {
 
       }, error => console.error(error)
     )
+  }
+
+  onSubmit(formData: ICatalog): void {
+    this._catalogService.updateCatalog(formData)
+      .subscribe(result => {
+        this._router.navigate(['show-catalog'])
+      });
   }
 }

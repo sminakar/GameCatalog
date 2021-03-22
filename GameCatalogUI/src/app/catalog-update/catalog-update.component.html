@@ -1,4 +1,5 @@
-<form>
+<form #form="ngForm" (submit)="onSubmit(resultCatalogData)">
+
   <h1 id="tableLabel">Games Catalog Update</h1>
 
   <br>
@@ -18,7 +19,7 @@
         <tr>
           <td><label>Genre</label></td>
           <td>
-            <select name="genres"  class="from-control form-control-sm">
+            <select name="genres"  class="from-control form-control-sm" [(ngModel)] = "resultCatalogData.genreID">
               <option *ngFor="let genre of genraData" [ngValue] = "genre.id" [selected] = genre.selected>
                 {{genre.title}}
               </option>
@@ -29,7 +30,7 @@
         <tr>
           <td><label>Produced by</label></td>
           <td>
-            <select name="developers"  class="from-control form-control-sm">
+            <select name="developers"  class="from-control form-control-sm" [(ngModel)] ="resultCatalogData.companyID">
               <option *ngFor="let developer of devloperData" [ngValue] = "developer.id" [selected] = developer.selected>
                 {{developer.companyName}}
               </option>
@@ -65,7 +66,7 @@
   <br/>
 
   <div *ngIf = "resultCatalogData.title.length > 0">
-    <button class="btn btn-primary">Update</button>
+    <button class="btn btn-primary" type="submit">Update</button>
   </div>
 </div>
 </form>

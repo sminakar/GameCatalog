@@ -118,7 +118,7 @@ namespace Services.Controllers.API.V1
             return Ok(addResult.Data);
         }
 
-        [HttpPut("UpdateCatalog")]
+        [HttpPost("UpdateCatalog")]
         [MapToApiVersion("1.0")]
         public IActionResult UpdateCatalogsAsync([FromBody] CatalogVM catalog)
         {
@@ -133,5 +133,6 @@ namespace Services.Controllers.API.V1
 
             return Ok();
         }
+
     }
 }

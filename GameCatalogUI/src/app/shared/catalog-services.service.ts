@@ -28,6 +28,11 @@ export class CatalogServices
     return this._http.get<any>(environment.apiBaseURL + "Companies");
   }
 
+  updateCatalog(formData: ICatalog) : Observable<any> {
+    console.log(formData);
+    
+    return this._http.put(environment.apiBaseURL + "UpdateCatalog", formData)
+  }
 }
 
   
