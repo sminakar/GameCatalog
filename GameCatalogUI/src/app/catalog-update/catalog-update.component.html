@@ -12,19 +12,29 @@
         <tr>
           <td><label>Title</label></td>
           <td><input type="text" class="from-control form-control-sm" placeholder="Game Title" 
-            [(ngModel)]="resultCatalogData.title" name="gameTitle"></td>
+            [(ngModel)]="resultCatalogData.title" name="gameTitle" maxlength="50"></td>
         </tr>
 
         <tr>
           <td><label>Genre</label></td>
-          <td><input type="text" class="from-control form-control-sm" placeholder="Genre" 
-            [(ngModel)]="resultCatalogData.genereTitle" name="genreName" ></td>
+          <td>
+            <select name="genres"  class="from-control form-control-sm">
+              <option *ngFor="let genre of genraData" [ngValue] = "genre.id" [selected] = genre.selected>
+                {{genre.title}}
+              </option>
+            </select>
+          </td>
         </tr>
-
+ 
         <tr>
           <td><label>Produced by</label></td>
-          <td><input type="text" class="from-control form-control-sm" placeholder="Company Name" 
-            [(ngModel)]="resultCatalogData.companyName" name="companyName" ></td>
+          <td>
+            <select name="developers"  class="from-control form-control-sm">
+              <option *ngFor="let developer of devloperData" [ngValue] = "developer.id" [selected] = developer.selected>
+                {{developer.companyName}}
+              </option>
+            </select>
+          </td>
         </tr>
 
         <tr>
@@ -52,5 +62,10 @@
 
       </tbody>
     </table>
+  <br/>
+
+  <div *ngIf = "resultCatalogData.title.length > 0">
+    <button class="btn btn-primary">Update</button>
+  </div>
 </div>
 </form>
