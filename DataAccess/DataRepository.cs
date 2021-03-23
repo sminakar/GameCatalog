@@ -199,5 +199,12 @@ namespace DataAccessLibrary
 
             return new Result<bool>() { Data = await _context.SaveChangesAsync() > 0 };
         }
+
+        public async void DeleteCatalogByIdAsync(Guid id)
+        {
+            var catalog = await _context.Catalogs.FirstAsync(g => g.ID == id);
+            _context.Entry(catalog).State = EntityState.Deleted;
+            await _context.SaveChangesAsync();
+        }
     }
 }

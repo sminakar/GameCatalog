@@ -14,5 +14,6 @@ namespace DataAccessLibrary
         Task<CatalogVM> GetCatalogByIdAsync(Guid Id);
         Task<Result<Guid>> StoreCatalogAsync(CatalogVM catalog);
         Task<Result<bool>> UpdateCatalogAsync(CatalogVM catalog);
+        void DeleteCatalogByIdAsync(Guid id);
     }
 }

@@ -11,6 +11,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Commons", "Commons\Commons.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLibrary", "DataAccess\DataAccessLibrary.csproj", "{97787080-5AFC-4CC2-9232-5727544F7A7A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameCatalog.Test", "GameCatalog.Test\GameCatalog.Test.csproj", "{A2245ED8-7AEC-42DE-B65B-31A5AD71676B}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Commons\Commons.projitems*{4d98d26e-e298-4db7-b401-3f4391d5140b}*SharedItemsImports = 13
@@ -29,6 +31,10 @@ Global
 		{97787080-5AFC-4CC2-9232-5727544F7A7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97787080-5AFC-4CC2-9232-5727544F7A7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97787080-5AFC-4CC2-9232-5727544F7A7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2245ED8-7AEC-42DE-B65B-31A5AD71676B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2245ED8-7AEC-42DE-B65B-31A5AD71676B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2245ED8-7AEC-42DE-B65B-31A5AD71676B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2245ED8-7AEC-42DE-B65B-31A5AD71676B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

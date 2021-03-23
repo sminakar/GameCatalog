@@ -115,7 +115,7 @@ namespace Services.Controllers.API.V1
                 return new BadRequestResult();
             }
 
-            return Ok(addResult.Data);
+            return Ok("{'CId':'" + addResult.Data + "'}");
         }
 
         [HttpPut("UpdateCatalog")]
